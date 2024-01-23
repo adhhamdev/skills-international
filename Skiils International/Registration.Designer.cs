@@ -145,6 +145,7 @@
             this.regBtn.TabIndex = 3;
             this.regBtn.Text = "Register";
             this.regBtn.UseVisualStyleBackColor = true;
+            this.regBtn.Click += new System.EventHandler(this.regBtn_Click);
             // 
             // groupBox3
             // 
@@ -423,6 +424,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(800, 1037);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.groupBox1);
