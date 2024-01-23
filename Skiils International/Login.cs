@@ -18,7 +18,7 @@ namespace Skiils_International
             InitializeComponent();
         }
 
-        SqlConnection conn = new SqlConnection(@"");
+        SqlConnection conn = new SqlConnection(@"Data Source=JGGUFWXBGP;Initial Catalog=Student;Integrated Security=True;Trust Server Certificate=True");
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
