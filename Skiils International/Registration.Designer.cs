@@ -80,6 +80,7 @@
             this.logoutLink.TabIndex = 0;
             this.logoutLink.TabStop = true;
             this.logoutLink.Text = "Logout";
+            this.logoutLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.logoutLink_LinkClicked);
             // 
             // label1
             // 
@@ -118,6 +119,7 @@
             this.delBtn.TabIndex = 8;
             this.delBtn.Text = " Delete";
             this.delBtn.UseVisualStyleBackColor = true;
+            this.delBtn.Click += new System.EventHandler(this.delBtn_Click);
             // 
             // clearBtn
             // 
@@ -127,6 +129,7 @@
             this.clearBtn.TabIndex = 7;
             this.clearBtn.Text = "Clear";
             this.clearBtn.UseVisualStyleBackColor = true;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
             // updateBtn
             // 
@@ -136,6 +139,7 @@
             this.updateBtn.TabIndex = 6;
             this.updateBtn.Text = "Update";
             this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // regBtn
             // 
@@ -419,6 +423,7 @@
             this.linkLabel1.TabIndex = 3;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Exit";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Registration
             // 
