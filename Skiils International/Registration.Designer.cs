@@ -320,6 +320,7 @@
             this.regNoInput.Name = "regNoInput";
             this.regNoInput.Size = new System.Drawing.Size(225, 33);
             this.regNoInput.TabIndex = 5;
+            this.regNoInput.SelectedIndexChanged += new System.EventHandler(this.regNoInput_SelectedIndexChanged);
             // 
             // label2
             // 
