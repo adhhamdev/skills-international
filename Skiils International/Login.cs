@@ -23,9 +23,9 @@ namespace Skiils_International
         private void loginBtn_Click(object sender, EventArgs e)
         {
             conn.Open();
-            string email = loginEmail.Text;
+            string username = loginUsername.Text;
             string password = loginPass.Text;
-            string query_select = $"SELECT * FROM Login WHERE username = '{email}' AND password = '{password}'";
+            string query_select = $"SELECT * FROM Login WHERE username = '{username}' AND password = '{password}'";
             SqlCommand cmnd = new SqlCommand(query_select, conn);
             SqlDataReader row = cmnd.ExecuteReader();
             if (row.HasRows)
@@ -43,8 +43,9 @@ namespace Skiils_International
 
         private void clearBtn_Click(object sender, EventArgs e)
         {
-            loginEmail.Clear();
+            loginUsername.Clear();
             loginPass.Clear();
+            loginUsername.Focus();
         }
 
         private void exitBtn_Click(object sender, EventArgs e)

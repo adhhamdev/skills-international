@@ -33,7 +33,7 @@
             this.loginBtn = new System.Windows.Forms.Button();
             this.clearBtn = new System.Windows.Forms.Button();
             this.loginPass = new System.Windows.Forms.TextBox();
-            this.loginEmail = new System.Windows.Forms.TextBox();
+            this.loginUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.exitBtn = new System.Windows.Forms.Button();
@@ -55,7 +55,7 @@
             this.groupBox1.Controls.Add(this.loginBtn);
             this.groupBox1.Controls.Add(this.clearBtn);
             this.groupBox1.Controls.Add(this.loginPass);
-            this.groupBox1.Controls.Add(this.loginEmail);
+            this.groupBox1.Controls.Add(this.loginUsername);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -95,12 +95,12 @@
             this.loginPass.Size = new System.Drawing.Size(272, 38);
             this.loginPass.TabIndex = 3;
             // 
-            // loginEmail
+            // loginUsername
             // 
-            this.loginEmail.Location = new System.Drawing.Point(119, 53);
-            this.loginEmail.Name = "loginEmail";
-            this.loginEmail.Size = new System.Drawing.Size(272, 38);
-            this.loginEmail.TabIndex = 2;
+            this.loginUsername.Location = new System.Drawing.Point(119, 53);
+            this.loginUsername.Name = "loginUsername";
+            this.loginUsername.Size = new System.Drawing.Size(272, 38);
+            this.loginUsername.TabIndex = 2;
             // 
             // label3
             // 
@@ -116,11 +116,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(53, 62);
+            this.label2.Location = new System.Drawing.Point(11, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 25);
+            this.label2.Size = new System.Drawing.Size(102, 25);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Email";
+            this.label2.Text = "Username";
             // 
             // exitBtn
             // 
@@ -158,7 +158,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox loginPass;
-        private System.Windows.Forms.TextBox loginEmail;
+        private System.Windows.Forms.TextBox loginUsername;
         private System.Windows.Forms.Button loginBtn;
         private System.Windows.Forms.Button clearBtn;
         private System.Windows.Forms.Button exitBtn;

@@ -234,10 +234,5 @@ namespace Skiils_International
                 conn.Close();
             }
         }
-
-        private void populateFields(SqlDataReader row)
-        {
-
-        }
     }
 }
