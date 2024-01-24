@@ -22,23 +22,29 @@ namespace Skiils_International
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            string username = loginUsername.Text;
-            string password = loginPass.Text;
-            string query_select = $"SELECT * FROM Login WHERE username = '{username}' AND password = '{password}'";
-            SqlCommand cmnd = new SqlCommand(query_select, conn);
-            SqlDataReader row = cmnd.ExecuteReader();
-            if (row.HasRows)
+            try
             {
-                this.Hide();
-                Registration regForm = new Registration();
-                regForm.Show();
-            }
-            else
+                conn.Open();
+                string username = loginUsername.Text;
+                string password = loginPass.Text;
+                string query_select = $"SELECT * FROM Login WHERE username = '{username}' AND password = '{password}'";
+                SqlCommand cmnd = new SqlCommand(query_select, conn);
+                SqlDataReader row = cmnd.ExecuteReader();
+                if (row.HasRows)
+                {
+                    this.Hide();
+                    Registration regForm = new Registration();
+                    regForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Login Credentials, Please check Username, Password and try again ! ", "Invalid Login Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                conn.Close();
+            } catch(Exception ex)
             {
-                MessageBox.Show("Invalid Login Credentials, Please check Username, Password and try again ! ", "Invalid Login Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                conn.Close();
             }
-            conn.Close();
         }
 
         private void clearBtn_Click(object sender, EventArgs e)
