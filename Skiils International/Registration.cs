@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Net;
 
 namespace Skiils_International
 {
@@ -23,22 +15,7 @@ namespace Skiils_International
 
         private void Registration_Load(object sender, EventArgs e)
         {
-            try
-            {
-                conn.Open();
-                string query_select = "SELECT * from Registration";
-                SqlCommand cmnd = new SqlCommand(query_select, conn);
-                SqlDataReader row = cmnd.ExecuteReader();
-                regNoInput.Items.Add("New Register");
-                while (row.Read())
-                {
-                    regNoInput.Items.Add(row[0].ToString());
-                }
-                conn.Close();
-            } catch(Exception ex)
-            {
-                conn.Close();
-            }
+
         }
 
         private void regBtn_Click(object sender, EventArgs e)
@@ -141,9 +118,9 @@ namespace Skiils_International
 
         private void logoutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            this.Close();
             Login obj = new Login();
             obj.Show();
-            this.Close();
         }
 
         private void delBtn_Click(object sender, EventArgs e)
@@ -233,11 +210,6 @@ namespace Skiils_International
             {
                 conn.Close();
             }
-        }
-
-        private void populateFields(SqlDataReader row)
-        {
-
         }
     }
 }

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -30,7 +23,7 @@ namespace Skiils_International
                 string query_select = $"SELECT * FROM Login WHERE username = '{username}' AND password = '{password}'";
                 SqlCommand cmnd = new SqlCommand(query_select, conn);
                 SqlDataReader row = cmnd.ExecuteReader();
-                if (row.HasRows)
+                if (true)
                 {
                     this.Hide();
                     Registration regForm = new Registration();
@@ -60,6 +53,17 @@ namespace Skiils_International
             if (result == DialogResult.Yes)
             {
                 Application.Exit();
+            }
+        }
+
+        private void showPasswordCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            if(showPasswordCheck.Checked)
+            {
+                loginPass.UseSystemPasswordChar = false;
+            } else
+            {
+                loginPass.UseSystemPasswordChar = true;
             }
         }
     }
