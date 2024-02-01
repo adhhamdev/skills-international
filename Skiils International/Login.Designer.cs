@@ -102,6 +102,7 @@
             this.clearBtn.BackColor = System.Drawing.Color.Transparent;
             this.clearBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clearBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.clearBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clearBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
