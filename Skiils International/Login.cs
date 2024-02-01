@@ -13,6 +13,7 @@ namespace Skiils_International
 
         SqlConnection conn = new SqlConnection(@"Data Source=JGGUFWXBGP;Initial Catalog=Student;Integrated Security=True;");
 
+
         private void loginBtn_Click(object sender, EventArgs e)
         {
             try
@@ -23,7 +24,7 @@ namespace Skiils_International
                 string query_select = $"SELECT * FROM Login WHERE username = '{username}' AND password = '{password}'";
                 SqlCommand cmnd = new SqlCommand(query_select, conn);
                 SqlDataReader row = cmnd.ExecuteReader();
-                if (true)
+                if (row.HasRows)
                 {
                     this.Hide();
                     Registration regForm = new Registration();
@@ -66,6 +67,11 @@ namespace Skiils_International
             {
                 loginPass.UseSystemPasswordChar = true;
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            loginUsername.Focus();
         }
     }
 }

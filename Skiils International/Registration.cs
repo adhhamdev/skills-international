@@ -17,6 +17,7 @@ namespace Skiils_International
         {
             try
             {
+                regNoInput.Items.Clear();
                 conn.Open();
                 string query_select = "SELECT * FROM Registration";
                 SqlCommand cmnd = new SqlCommand(query_select, conn);
@@ -66,6 +67,7 @@ namespace Skiils_International
                 insertCmnd.ExecuteNonQuery();
                 conn.Close();
                 MessageBox.Show("Record Added Successfully!", "Registered Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Registration_Load(sender, e);
             }
             catch (Exception ex)
             {
@@ -109,6 +111,7 @@ namespace Skiils_International
                     cmnd.ExecuteNonQuery();
                     conn.Close();
                     MessageBox.Show("Record Updated Successfully!", "Updated Registration", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Registration_Load(sender, e);
                 }
                 else
                 {
@@ -158,6 +161,7 @@ namespace Skiils_International
                         conn.Close();
                         MessageBox.Show("Record Deleted Successfully!", "Deleted Registration", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+                    Registration_Load(sender, e);
                 }
                 else
                 {
@@ -200,6 +204,7 @@ namespace Skiils_International
                 {
                     regBtn.Enabled = false;
                     updateBtn.Enabled = true;
+                    delBtn.Enabled = true;
                     string query_select = "SELECT * FROM Registration WHERE regNo = '" + selectedIndex + "'";
                     SqlCommand cmnd = new SqlCommand(query_select, conn);
                     SqlDataReader row = cmnd.ExecuteReader();
@@ -232,6 +237,7 @@ namespace Skiils_International
                 {
                     regBtn.Enabled = true;
                     updateBtn.Enabled = false;
+                    delBtn.Enabled = false;
                 }
                     conn.Close();
                 
@@ -239,6 +245,37 @@ namespace Skiils_International
             {
                 conn.Close();
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void regBtn_EnabledChanged(object sender, EventArgs e)
+        {
+            if(regBtn.Enabled)
+            {
+                regBtn.ForeColor = System.Drawing.Color.White;
+                regBtn.BackColor = System.Drawing.Color.RoyalBlue;
+            } else
+            {
+                {
+                    regBtn.ForeColor = System.Drawing.Color.Gray;
+                    regBtn.BackColor = System.Drawing.Color.DarkGray;
+                }
+            }
+        }
+
+        private void updateBtn_EnabledChanged(object sender, EventArgs e)
+        {
+            if (updateBtn.Enabled)
+            {
+                updateBtn.ForeColor = System.Drawing.Color.RoyalBlue;
+                updateBtn.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            }
+            else
+            {
+                {
+                    updateBtn.ForeColor = System.Drawing.Color.Gray;
+                    updateBtn.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+                }
             }
         }
     }
