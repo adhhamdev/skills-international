@@ -143,7 +143,7 @@
             // 
             this.clearBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clearBtn.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.clearBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.clearBtn.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearBtn.ForeColor = System.Drawing.Color.RoyalBlue;
             this.clearBtn.Location = new System.Drawing.Point(304, 642);
@@ -160,7 +160,7 @@
             this.updateBtn.BackColor = System.Drawing.Color.Transparent;
             this.updateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.updateBtn.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.updateBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.updateBtn.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateBtn.ForeColor = System.Drawing.Color.RoyalBlue;
             this.updateBtn.Location = new System.Drawing.Point(149, 642);
