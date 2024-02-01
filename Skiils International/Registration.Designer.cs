@@ -93,7 +93,7 @@
             this.label1.Location = new System.Drawing.Point(186, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(315, 39);
+            this.label1.Size = new System.Drawing.Size(300, 38);
             this.label1.TabIndex = 1;
             this.label1.Text = "Skills International";
             // 
@@ -122,6 +122,8 @@
             // delBtn
             // 
             this.delBtn.BackColor = System.Drawing.Color.Crimson;
+            this.delBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.delBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.delBtn.Location = new System.Drawing.Point(474, 572);
             this.delBtn.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
@@ -129,44 +131,48 @@
             this.delBtn.Size = new System.Drawing.Size(99, 33);
             this.delBtn.TabIndex = 8;
             this.delBtn.TabStop = false;
-            this.delBtn.Text = " Delete";
+            this.delBtn.Text = "DELETE";
             this.delBtn.UseVisualStyleBackColor = false;
             this.delBtn.Click += new System.EventHandler(this.delBtn_Click);
             // 
             // clearBtn
             // 
+            this.clearBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clearBtn.Location = new System.Drawing.Point(373, 572);
+            this.clearBtn.Location = new System.Drawing.Point(361, 572);
             this.clearBtn.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(99, 33);
             this.clearBtn.TabIndex = 7;
-            this.clearBtn.Text = "Clear";
+            this.clearBtn.Text = "CLEAR";
             this.clearBtn.UseVisualStyleBackColor = true;
             this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
             // updateBtn
             // 
             this.updateBtn.BackColor = System.Drawing.SystemColors.Window;
+            this.updateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateBtn.ForeColor = System.Drawing.Color.RoyalBlue;
             this.updateBtn.Location = new System.Drawing.Point(156, 572);
             this.updateBtn.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
             this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(99, 33);
+            this.updateBtn.Size = new System.Drawing.Size(111, 33);
             this.updateBtn.TabIndex = 6;
-            this.updateBtn.Text = "Update";
+            this.updateBtn.Text = "UPDATE";
             this.updateBtn.UseVisualStyleBackColor = false;
             this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // regBtn
             // 
             this.regBtn.BackColor = System.Drawing.Color.RoyalBlue;
+            this.regBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.regBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.regBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.regBtn.Location = new System.Drawing.Point(21, 572);
             this.regBtn.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
             this.regBtn.Name = "regBtn";
-            this.regBtn.Size = new System.Drawing.Size(132, 33);
+            this.regBtn.Size = new System.Drawing.Size(123, 33);
             this.regBtn.TabIndex = 3;
             this.regBtn.Text = "REGISTER";
             this.regBtn.UseVisualStyleBackColor = false;
@@ -188,7 +194,7 @@
             this.groupBox3.Size = new System.Drawing.Size(551, 135);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Parent Details";
+            this.groupBox3.Text = "PARENT DETAILS";
             // 
             // contactNumberInput
             // 
@@ -266,7 +272,7 @@
             this.groupBox4.Size = new System.Drawing.Size(551, 184);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Basic Details";
+            this.groupBox4.Text = "BASIC DETAILS";
             // 
             // femaleRadio
             // 
@@ -401,7 +407,7 @@
             this.groupBox2.Size = new System.Drawing.Size(551, 148);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Contact Details";
+            this.groupBox2.Text = "CONTACT DETAILS";
             // 
             // homePhoneInput
             // 
@@ -487,10 +493,10 @@
             this.linkLabel1.Location = new System.Drawing.Point(580, 687);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(52, 29);
+            this.linkLabel1.Size = new System.Drawing.Size(68, 29);
             this.linkLabel1.TabIndex = 3;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Exit";
+            this.linkLabel1.Text = "EXIT";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Registration
@@ -510,6 +516,7 @@
             this.Name = "Registration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration - Skills International";
+            this.Load += new System.EventHandler(this.Registration_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);

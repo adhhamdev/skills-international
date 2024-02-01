@@ -36,6 +36,7 @@ namespace Skiils_International
                 conn.Close();
             } catch(Exception ex)
             {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 conn.Close();
             }
         }

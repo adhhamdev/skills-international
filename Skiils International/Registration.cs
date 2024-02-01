@@ -15,7 +15,24 @@ namespace Skiils_International
 
         private void Registration_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                conn.Open();
+                string query_select = "SELECT * FROM Registration";
+                SqlCommand cmnd = new SqlCommand(query_select, conn);
+                SqlDataReader row = cmnd.ExecuteReader();
+                regNoInput.Items.Add("New Register");
+                while (row.Read())
+                {
+                    regNoInput.Items.Add(row[0].ToString());
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                conn.Close();
+            }
         }
 
         private void regBtn_Click(object sender, EventArgs e)
@@ -99,6 +116,7 @@ namespace Skiils_International
                 }
             } catch(Exception ex)
             {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 conn.Close();
             }
         }
@@ -147,6 +165,7 @@ namespace Skiils_International
                 }
             } catch(Exception ex)
             {
+                MessageBox.Show("Error", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 conn.Close();
             }
         }
@@ -177,38 +196,49 @@ namespace Skiils_International
             {
                 conn.Open();
                 string selectedIndex = regNoInput.SelectedItem.ToString();
-                string query_select = "SELECT * FROM Registration WHERE regNo = '" + selectedIndex + "'";
-                SqlCommand cmnd = new SqlCommand(query_select, conn);
-                SqlDataReader row = cmnd.ExecuteReader();
-                while (row.Read())
+                if(selectedIndex != "New Register")
                 {
-                    firstNameInput.Text = row[0].ToString();
-                    lastNameInput.Text = row[1].ToString();
-                    dobInput.Format = DateTimePickerFormat.Custom;
-                    dobInput.CustomFormat = "yyyy-MM-dd hh:mm:ss";
-                    dobInput.Text = row[2].ToString();
-                    if (row[3].ToString() == "Male")
+                    regBtn.Enabled = false;
+                    updateBtn.Enabled = true;
+                    string query_select = "SELECT * FROM Registration WHERE regNo = '" + selectedIndex + "'";
+                    SqlCommand cmnd = new SqlCommand(query_select, conn);
+                    SqlDataReader row = cmnd.ExecuteReader();
+                    while (row.Read())
                     {
-                        maleRadio.Checked = true;
-                        femaleRadio.Checked = false;
+                        firstNameInput.Text = row[1].ToString();
+                        lastNameInput.Text = row[2].ToString();
+                        dobInput.Format = DateTimePickerFormat.Custom;
+                        dobInput.CustomFormat = "yyyy-MM-dd hh:mm:ss";
+                        dobInput.Text = row[3].ToString();
+                        if (row[4].ToString() == "Male")
+                        {
+                            maleRadio.Checked = true;
+                            femaleRadio.Checked = false;
+                        }
+                        else
+                        {
+                            femaleRadio.Checked = true;
+                            maleRadio.Checked = false;
+                        }
+                        addressInput.Text = row[5].ToString();
+                        emailInput.Text = row[6].ToString();
+                        mobilePhoneInput.Text = row[7].ToString();
+                        homePhoneInput.Text = row[8].ToString();
+                        parentNameInput.Text = row[9].ToString();
+                        nicInput.Text = row[10].ToString();
+                        contactNumberInput.Text = row[11].ToString();
                     }
-                    else
-                    {
-                        femaleRadio.Checked = true;
-                        maleRadio.Checked = false;
-                    }
-                    addressInput.Text = row[4].ToString();
-                    emailInput.Text = row[5].ToString();
-                    mobilePhoneInput.Text = row[6].ToString();
-                    homePhoneInput.Text = row[7].ToString();
-                    parentNameInput.Text = row[8].ToString();
-                    nicInput.Text = row[9].ToString();
-                    contactNumberInput.Text = row[10].ToString();
+                } else
+                {
+                    regBtn.Enabled = true;
+                    updateBtn.Enabled = false;
                 }
-                conn.Close();
+                    conn.Close();
+                
             } catch(Exception ex)
             {
                 conn.Close();
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
