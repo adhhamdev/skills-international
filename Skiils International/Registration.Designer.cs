@@ -75,9 +75,10 @@
             // 
             this.logoutLink.ActiveLinkColor = System.Drawing.Color.Crimson;
             this.logoutLink.AutoSize = true;
+            this.logoutLink.BackColor = System.Drawing.Color.Transparent;
             this.logoutLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutLink.LinkColor = System.Drawing.Color.BlueViolet;
-            this.logoutLink.Location = new System.Drawing.Point(17, 12);
+            this.logoutLink.LinkColor = System.Drawing.Color.LightSteelBlue;
+            this.logoutLink.Location = new System.Drawing.Point(17, 23);
             this.logoutLink.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.logoutLink.Name = "logoutLink";
             this.logoutLink.Size = new System.Drawing.Size(97, 25);
@@ -89,7 +90,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
             this.label1.Location = new System.Drawing.Point(156, 12);
             this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label1.Name = "label1";
@@ -139,6 +142,8 @@
             // clearBtn
             // 
             this.clearBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clearBtn.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.clearBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearBtn.ForeColor = System.Drawing.Color.RoyalBlue;
             this.clearBtn.Location = new System.Drawing.Point(304, 642);
@@ -152,8 +157,10 @@
             // 
             // updateBtn
             // 
-            this.updateBtn.BackColor = System.Drawing.SystemColors.Window;
+            this.updateBtn.BackColor = System.Drawing.Color.Transparent;
             this.updateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.updateBtn.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.updateBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateBtn.ForeColor = System.Drawing.Color.RoyalBlue;
             this.updateBtn.Location = new System.Drawing.Point(149, 642);
@@ -212,7 +219,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label13.ForeColor = System.Drawing.SystemColors.Window;
             this.label13.Location = new System.Drawing.Point(21, 121);
             this.label13.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label13.Name = "label13";
@@ -231,7 +238,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label11.ForeColor = System.Drawing.SystemColors.Window;
             this.label11.Location = new System.Drawing.Point(107, 79);
             this.label11.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label11.Name = "label11";
@@ -250,7 +257,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label12.ForeColor = System.Drawing.SystemColors.Window;
             this.label12.Location = new System.Drawing.Point(47, 34);
             this.label12.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label12.Name = "label12";
@@ -283,7 +290,7 @@
             // femaleRadio
             // 
             this.femaleRadio.AutoSize = true;
-            this.femaleRadio.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.femaleRadio.ForeColor = System.Drawing.SystemColors.Window;
             this.femaleRadio.Location = new System.Drawing.Point(285, 163);
             this.femaleRadio.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.femaleRadio.Name = "femaleRadio";
@@ -296,7 +303,7 @@
             // maleRadio
             // 
             this.maleRadio.AutoSize = true;
-            this.maleRadio.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.maleRadio.ForeColor = System.Drawing.SystemColors.Window;
             this.maleRadio.Location = new System.Drawing.Point(165, 163);
             this.maleRadio.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.maleRadio.Name = "maleRadio";
@@ -309,7 +316,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.ForeColor = System.Drawing.SystemColors.Window;
             this.label6.Location = new System.Drawing.Point(75, 163);
             this.label6.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label6.Name = "label6";
@@ -322,13 +329,13 @@
             this.dobInput.Location = new System.Drawing.Point(165, 119);
             this.dobInput.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.dobInput.Name = "dobInput";
-            this.dobInput.Size = new System.Drawing.Size(251, 30);
+            this.dobInput.Size = new System.Drawing.Size(305, 30);
             this.dobInput.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.ForeColor = System.Drawing.SystemColors.Window;
             this.label5.Location = new System.Drawing.Point(35, 119);
             this.label5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label5.Name = "label5";
@@ -347,7 +354,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.ForeColor = System.Drawing.SystemColors.Window;
             this.label4.Location = new System.Drawing.Point(47, 78);
             this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label4.Name = "label4";
@@ -366,7 +373,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.ForeColor = System.Drawing.SystemColors.Window;
             this.label3.Location = new System.Drawing.Point(47, 39);
             this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label3.Name = "label3";
@@ -387,7 +394,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.ForeColor = System.Drawing.SystemColors.Window;
             this.label2.Location = new System.Drawing.Point(94, 42);
             this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label2.Name = "label2";
@@ -418,22 +425,22 @@
             // 
             // homePhoneInput
             // 
-            this.homePhoneInput.Location = new System.Drawing.Point(383, 130);
+            this.homePhoneInput.Location = new System.Drawing.Point(347, 130);
             this.homePhoneInput.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.homePhoneInput.Name = "homePhoneInput";
-            this.homePhoneInput.Size = new System.Drawing.Size(87, 30);
+            this.homePhoneInput.Size = new System.Drawing.Size(123, 30);
             this.homePhoneInput.TabIndex = 17;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(280, 133);
+            this.label10.ForeColor = System.Drawing.SystemColors.Window;
+            this.label10.Location = new System.Drawing.Point(281, 133);
             this.label10.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(126, 25);
+            this.label10.Size = new System.Drawing.Size(64, 25);
             this.label10.TabIndex = 16;
-            this.label10.Text = "Home Phone";
+            this.label10.Text = "Home";
             // 
             // mobilePhoneInput
             // 
@@ -446,7 +453,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label9.ForeColor = System.Drawing.SystemColors.Window;
             this.label9.Location = new System.Drawing.Point(35, 130);
             this.label9.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label9.Name = "label9";
@@ -465,7 +472,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label7.ForeColor = System.Drawing.SystemColors.Window;
             this.label7.Location = new System.Drawing.Point(93, 91);
             this.label7.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label7.Name = "label7";
@@ -485,7 +492,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label8.ForeColor = System.Drawing.SystemColors.Window;
             this.label8.Location = new System.Drawing.Point(75, 46);
             this.label8.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label8.Name = "label8";
@@ -515,6 +522,7 @@
             this.AutoScrollMargin = new System.Drawing.Size(0, 40);
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(577, 793);
             this.Controls.Add(this.linkLabel1);
