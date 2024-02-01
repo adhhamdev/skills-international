@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Skiils_International
 {
@@ -117,7 +117,8 @@ namespace Skiils_International
                 {
                     MessageBox.Show("Select a Registration No!", "Invalid Registration Number", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 conn.Close();
@@ -167,7 +168,8 @@ namespace Skiils_International
                 {
                     MessageBox.Show("Select a Registration No!", "Invalid Registration Number", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Error", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 conn.Close();
@@ -200,7 +202,7 @@ namespace Skiils_International
             {
                 conn.Open();
                 string selectedIndex = regNoInput.SelectedItem.ToString();
-                if(selectedIndex != "New Register")
+                if (selectedIndex != "New Register")
                 {
                     regBtn.Enabled = false;
                     updateBtn.Enabled = true;
@@ -233,15 +235,17 @@ namespace Skiils_International
                         nicInput.Text = row[10].ToString();
                         contactNumberInput.Text = row[11].ToString();
                     }
-                } else
+                }
+                else
                 {
                     regBtn.Enabled = true;
                     updateBtn.Enabled = false;
                     delBtn.Enabled = false;
                 }
-                    conn.Close();
-                
-            } catch(Exception ex)
+                conn.Close();
+
+            }
+            catch (Exception ex)
             {
                 conn.Close();
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -250,11 +254,12 @@ namespace Skiils_International
 
         private void regBtn_EnabledChanged(object sender, EventArgs e)
         {
-            if(regBtn.Enabled)
+            if (regBtn.Enabled)
             {
                 regBtn.ForeColor = System.Drawing.Color.White;
                 regBtn.BackColor = System.Drawing.Color.RoyalBlue;
-            } else
+            }
+            else
             {
                 {
                     regBtn.ForeColor = System.Drawing.Color.Gray;

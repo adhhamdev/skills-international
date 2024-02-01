@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Skiils_International
 {
@@ -35,7 +35,8 @@ namespace Skiils_International
                     MessageBox.Show("Invalid Login Credentials, Please check Username, Password and try again ! ", "Invalid Login Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 conn.Close();
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 conn.Close();
@@ -60,10 +61,11 @@ namespace Skiils_International
 
         private void showPasswordCheck_CheckedChanged(object sender, EventArgs e)
         {
-            if(showPasswordCheck.Checked)
+            if (showPasswordCheck.Checked)
             {
                 loginPass.UseSystemPasswordChar = false;
-            } else
+            }
+            else
             {
                 loginPass.UseSystemPasswordChar = true;
             }
