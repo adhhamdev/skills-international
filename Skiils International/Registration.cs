@@ -17,21 +17,24 @@ namespace Skiils_International
         {
             try
             {
-                regNoInput.Items.Clear();
                 conn.Open();
                 string query_select = "SELECT * FROM Registration";
-                SqlCommand cmnd = new SqlCommand(query_select, conn);
-                SqlDataReader row = cmnd.ExecuteReader();
+                SqlCommand command = new SqlCommand(query_select, conn);
+                SqlDataReader row = command.ExecuteReader();
+                regNoInput.Items.Clear();
                 regNoInput.Items.Add("New Register");
                 while (row.Read())
                 {
                     regNoInput.Items.Add(row[0].ToString());
                 }
+                clearBtn.PerformClick();
+                regBtn.Enabled = true;
+                updateBtn.Enabled = false;
+                delBtn.Enabled = false;
                 conn.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 conn.Close();
             }
         }
@@ -71,10 +74,10 @@ namespace Skiils_International
             }
             catch (Exception ex)
             {
+                conn.Close();
                 string msg = "Insert Error: ";
                 msg += ex.Message;
                 MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                conn.Close();
             }
         }
 
@@ -107,11 +110,10 @@ namespace Skiils_International
                     int contactNo = int.Parse(contactNumberInput.Text);
                     string query_insert = $"update Registration set firstName = '{firstName}', lastName = '{lastName}', dateOfBirth = '{dobInput.Text}', gender = '{gender}', address = '{address}', email = '{email}', mobilePhone = '{mobilePhone}', homePhone = '{homePhone}', parentName = '{parentName}', nic = '{nic}', contactNo = '{contactNo}' WHERE regNo = '{no}'";
                     conn.Open();
-                    SqlCommand cmnd = new SqlCommand(query_insert, conn);
-                    cmnd.ExecuteNonQuery();
+                    SqlCommand command = new SqlCommand(query_insert, conn);
+                    command.ExecuteNonQuery();
                     conn.Close();
                     MessageBox.Show("Record Updated Successfully!", "Updated Registration", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Registration_Load(sender, e);
                 }
                 else
                 {
@@ -120,7 +122,6 @@ namespace Skiils_International
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 conn.Close();
             }
         }
@@ -131,10 +132,6 @@ namespace Skiils_International
             if (result == DialogResult.Yes)
             {
                 Application.Exit();
-            }
-            else if (result == DialogResult.No)
-            {
-                this.Close();
             }
         }
 
@@ -159,10 +156,19 @@ namespace Skiils_International
                         conn.Open();
                         SqlCommand cmnd = new SqlCommand(query_insert, conn);
                         cmnd.ExecuteNonQuery();
-                        conn.Close();
                         MessageBox.Show("Record Deleted Successfully!", "Deleted Registration", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        string query_select = "SELECT * FROM Registration";
+                        SqlCommand command = new SqlCommand(query_select, conn);
+                        SqlDataReader row = command.ExecuteReader();
+                        regNoInput.Items.Clear();
+                        regNoInput.Items.Add("New Register");
+                        clearBtn.PerformClick();
+                        while (row.Read())
+                        {
+                            regNoInput.Items.Add(row[0].ToString());
+                        }
+                        conn.Close();
                     }
-                    Registration_Load(sender, e);
                 }
                 else
                 {
@@ -171,14 +177,13 @@ namespace Skiils_International
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 conn.Close();
             }
         }
 
         private void clearBtn_Click(object sender, EventArgs e)
         {
-            regNoInput.Text = "";
+            regNoInput.SelectedIndex = 0;
             firstNameInput.Text = "";
             lastNameInput.Text = "";
             dobInput.Format = DateTimePickerFormat.Custom;
@@ -208,8 +213,8 @@ namespace Skiils_International
                     updateBtn.Enabled = true;
                     delBtn.Enabled = true;
                     string query_select = "SELECT * FROM Registration WHERE regNo = '" + selectedIndex + "'";
-                    SqlCommand cmnd = new SqlCommand(query_select, conn);
-                    SqlDataReader row = cmnd.ExecuteReader();
+                    SqlCommand command = new SqlCommand(query_select, conn);
+                    SqlDataReader row = command.ExecuteReader();
                     while (row.Read())
                     {
                         firstNameInput.Text = row[1].ToString();
@@ -238,6 +243,7 @@ namespace Skiils_International
                 }
                 else
                 {
+                    clearBtn.PerformClick();
                     regBtn.Enabled = true;
                     updateBtn.Enabled = false;
                     delBtn.Enabled = false;
@@ -248,7 +254,6 @@ namespace Skiils_International
             catch (Exception ex)
             {
                 conn.Close();
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

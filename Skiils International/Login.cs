@@ -38,7 +38,6 @@ namespace Skiils_International
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 conn.Close();
             }
         }
@@ -74,6 +73,15 @@ namespace Skiils_International
         private void Login_Load(object sender, EventArgs e)
         {
             loginUsername.Focus();
+        }
+
+        private void exitBtn_Click_1(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure, do you really want to exit...?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

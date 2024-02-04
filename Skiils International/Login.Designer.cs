@@ -176,6 +176,7 @@
             this.exitBtn.TabIndex = 5;
             this.exitBtn.Text = "EXIT";
             this.exitBtn.UseVisualStyleBackColor = false;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click_1);
             // 
             // logo
             // 
