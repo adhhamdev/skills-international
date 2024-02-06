@@ -21,16 +21,12 @@ namespace Skiils_International
                 string query_select = "SELECT * FROM Registration";
                 SqlCommand command = new SqlCommand(query_select, conn);
                 SqlDataReader row = command.ExecuteReader();
-                regNoInput.Items.Clear();
                 regNoInput.Items.Add("New Register");
                 while (row.Read())
                 {
                     regNoInput.Items.Add(row[0].ToString());
                 }
-                clearBtn.PerformClick();
-                regBtn.Enabled = true;
-                updateBtn.Enabled = false;
-                delBtn.Enabled = false;
+                regNoInput.SelectedItem = "New Register";
                 conn.Close();
             }
             catch (Exception ex)
@@ -68,9 +64,18 @@ namespace Skiils_International
                 conn.Open();
                 SqlCommand insertCmnd = new SqlCommand(query_insert, conn);
                 insertCmnd.ExecuteNonQuery();
+                regNoInput.Items.Clear();
+                string query_select = "SELECT * FROM Registration";
+                SqlCommand command = new SqlCommand(query_select, conn);
+                SqlDataReader row = command.ExecuteReader();
+                regNoInput.Items.Add("New Register");
+                while (row.Read())
+                {
+                    regNoInput.Items.Add(row[0].ToString());
+                }
+                regNoInput.SelectedItem = regNo.ToString();
                 conn.Close();
                 MessageBox.Show("Record Added Successfully!", "Registered Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Registration_Load(sender, e);
             }
             catch (Exception ex)
             {
@@ -86,39 +91,32 @@ namespace Skiils_International
             try
             {
                 string no = regNoInput.Text;
-                if (no != "New Register" && no != "")
+                string firstName = firstNameInput.Text;
+                string lastName = lastNameInput.Text;
+                dobInput.Format = DateTimePickerFormat.Custom;
+                dobInput.CustomFormat = "yyyy-MM-dd hh:mm:ss";
+                string gender;
+                if (maleRadio.Checked)
                 {
-                    string firstName = firstNameInput.Text;
-                    string lastName = lastNameInput.Text;
-                    dobInput.Format = DateTimePickerFormat.Custom;
-                    dobInput.CustomFormat = "yyyy-MM-dd hh:mm:ss";
-                    string gender;
-                    if (maleRadio.Checked)
-                    {
-                        gender = "Male";
-                    }
-                    else
-                    {
-                        gender = "Female";
-                    }
-                    string address = addressInput.Text;
-                    string email = emailInput.Text;
-                    int mobilePhone = int.Parse(mobilePhoneInput.Text);
-                    int homePhone = int.Parse(homePhoneInput.Text);
-                    string parentName = parentNameInput.Text;
-                    string nic = nicInput.Text;
-                    int contactNo = int.Parse(contactNumberInput.Text);
-                    string query_insert = $"update Registration set firstName = '{firstName}', lastName = '{lastName}', dateOfBirth = '{dobInput.Text}', gender = '{gender}', address = '{address}', email = '{email}', mobilePhone = '{mobilePhone}', homePhone = '{homePhone}', parentName = '{parentName}', nic = '{nic}', contactNo = '{contactNo}' WHERE regNo = '{no}'";
-                    conn.Open();
-                    SqlCommand command = new SqlCommand(query_insert, conn);
-                    command.ExecuteNonQuery();
-                    conn.Close();
-                    MessageBox.Show("Record Updated Successfully!", "Updated Registration", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    gender = "Male";
                 }
                 else
                 {
-                    MessageBox.Show("Select a Registration No!", "Invalid Registration Number", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    gender = "Female";
                 }
+                string address = addressInput.Text;
+                string email = emailInput.Text;
+                int mobilePhone = int.Parse(mobilePhoneInput.Text);
+                int homePhone = int.Parse(homePhoneInput.Text);
+                string parentName = parentNameInput.Text;
+                string nic = nicInput.Text;
+                int contactNo = int.Parse(contactNumberInput.Text);
+                string query_insert = $"update Registration set firstName = '{firstName}', lastName = '{lastName}', dateOfBirth = '{dobInput.Text}', gender = '{gender}', address = '{address}', email = '{email}', mobilePhone = '{mobilePhone}', homePhone = '{homePhone}', parentName = '{parentName}', nic = '{nic}', contactNo = '{contactNo}' WHERE regNo = '{no}'";
+                conn.Open();
+                SqlCommand command = new SqlCommand(query_insert, conn);
+                command.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show("Record Updated Successfully!", "Updated Registration", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -147,32 +145,26 @@ namespace Skiils_International
             try
             {
                 string no = regNoInput.Text;
-                if (no != "New Register" && no != "")
+                var result = MessageBox.Show("Are you sure, do you really want to delete this record...?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    var result = MessageBox.Show("Are you sure, do you really want to delete this record...?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
+                    string query_insert = "DELETE from Registration WHERE regNo = " + no + "";
+                    conn.Open();
+                    SqlCommand cmnd = new SqlCommand(query_insert, conn);
+                    cmnd.ExecuteNonQuery();
+                    MessageBox.Show("Record Deleted Successfully!", "Deleted Registration", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    regNoInput.Items.Clear();
+                    string query_select = "SELECT * FROM Registration";
+                    SqlCommand command = new SqlCommand(query_select, conn);
+                    SqlDataReader row = command.ExecuteReader();
+                    regNoInput.Items.Add("New Register");
+                    while (row.Read())
                     {
-                        string query_insert = "DELETE from Registration WHERE regNo = " + no + "";
-                        conn.Open();
-                        SqlCommand cmnd = new SqlCommand(query_insert, conn);
-                        cmnd.ExecuteNonQuery();
-                        MessageBox.Show("Record Deleted Successfully!", "Deleted Registration", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        string query_select = "SELECT * FROM Registration";
-                        SqlCommand command = new SqlCommand(query_select, conn);
-                        SqlDataReader row = command.ExecuteReader();
-                        regNoInput.Items.Clear();
-                        regNoInput.Items.Add("New Register");
-                        clearBtn.PerformClick();
-                        while (row.Read())
-                        {
-                            regNoInput.Items.Add(row[0].ToString());
-                        }
-                        conn.Close();
+                        regNoInput.Items.Add(row[0].ToString());
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Select a Registration No!", "Invalid Registration Number", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    regNoInput.SelectedItem = "New Register";
+                    clearBtn.PerformClick();
+                    conn.Close();
                 }
             }
             catch (Exception ex)
@@ -183,7 +175,6 @@ namespace Skiils_International
 
         private void clearBtn_Click(object sender, EventArgs e)
         {
-            regNoInput.SelectedIndex = 0;
             firstNameInput.Text = "";
             lastNameInput.Text = "";
             dobInput.Format = DateTimePickerFormat.Custom;
@@ -266,10 +257,8 @@ namespace Skiils_International
             }
             else
             {
-                {
-                    regBtn.ForeColor = System.Drawing.Color.Gray;
-                    regBtn.BackColor = System.Drawing.Color.DarkGray;
-                }
+                regBtn.ForeColor = System.Drawing.Color.Gray;
+                regBtn.BackColor = System.Drawing.Color.DarkGray;
             }
         }
 
@@ -282,10 +271,22 @@ namespace Skiils_International
             }
             else
             {
-                {
-                    updateBtn.ForeColor = System.Drawing.Color.Gray;
-                    updateBtn.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-                }
+                updateBtn.ForeColor = System.Drawing.Color.Gray;
+                updateBtn.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            }
+        }
+
+        private void delBtn_EnabledChanged(object sender, EventArgs e)
+        {
+            if (!delBtn.Enabled)
+            {
+                delBtn.ForeColor = System.Drawing.Color.White;
+                delBtn.BackColor = System.Drawing.Color.Crimson;
+            }
+            else
+            {
+                delBtn.ForeColor = System.Drawing.Color.White;
+                delBtn.BackColor = System.Drawing.Color.DarkGray;
             }
         }
     }

@@ -127,6 +127,7 @@
             // 
             this.delBtn.BackColor = System.Drawing.Color.Crimson;
             this.delBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.delBtn.Enabled = false;
             this.delBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.delBtn.Location = new System.Drawing.Point(403, 642);
@@ -137,6 +138,7 @@
             this.delBtn.TabStop = false;
             this.delBtn.Text = "DELETE";
             this.delBtn.UseVisualStyleBackColor = false;
+            this.delBtn.EnabledChanged += new System.EventHandler(this.delBtn_EnabledChanged);
             this.delBtn.Click += new System.EventHandler(this.delBtn_Click);
             // 
             // clearBtn
@@ -146,7 +148,7 @@
             this.clearBtn.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearBtn.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.clearBtn.Location = new System.Drawing.Point(304, 642);
+            this.clearBtn.Location = new System.Drawing.Point(291, 642);
             this.clearBtn.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(97, 33);
@@ -159,11 +161,12 @@
             // 
             this.updateBtn.BackColor = System.Drawing.Color.Transparent;
             this.updateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.updateBtn.Enabled = false;
             this.updateBtn.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
             this.updateBtn.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateBtn.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.updateBtn.Location = new System.Drawing.Point(149, 642);
+            this.updateBtn.Location = new System.Drawing.Point(165, 642);
             this.updateBtn.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(105, 33);
@@ -521,8 +524,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScrollMargin = new System.Drawing.Size(0, 40);
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.BackColor = System.Drawing.SystemColors.Window;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(17)))), ((int)(((byte)(34)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(577, 793);
             this.Controls.Add(this.linkLabel1);
