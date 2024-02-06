@@ -127,17 +127,15 @@
             // 
             this.delBtn.BackColor = System.Drawing.Color.Crimson;
             this.delBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.delBtn.Enabled = false;
             this.delBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.delBtn.Location = new System.Drawing.Point(403, 642);
             this.delBtn.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.delBtn.Name = "delBtn";
             this.delBtn.Size = new System.Drawing.Size(109, 33);
-            this.delBtn.TabIndex = 8;
-            this.delBtn.TabStop = false;
+            this.delBtn.TabIndex = 17;
             this.delBtn.Text = "DELETE";
-            this.delBtn.UseVisualStyleBackColor = false;
+            this.delBtn.UseVisualStyleBackColor = true;
             this.delBtn.EnabledChanged += new System.EventHandler(this.delBtn_EnabledChanged);
             this.delBtn.Click += new System.EventHandler(this.delBtn_Click);
             // 
@@ -152,7 +150,7 @@
             this.clearBtn.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(97, 33);
-            this.clearBtn.TabIndex = 7;
+            this.clearBtn.TabIndex = 16;
             this.clearBtn.Text = "CLEAR";
             this.clearBtn.UseVisualStyleBackColor = true;
             this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
@@ -170,9 +168,9 @@
             this.updateBtn.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(105, 33);
-            this.updateBtn.TabIndex = 6;
+            this.updateBtn.TabIndex = 15;
             this.updateBtn.Text = "UPDATE";
-            this.updateBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.UseVisualStyleBackColor = true;
             this.updateBtn.EnabledChanged += new System.EventHandler(this.updateBtn_EnabledChanged);
             this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
@@ -186,9 +184,9 @@
             this.regBtn.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.regBtn.Name = "regBtn";
             this.regBtn.Size = new System.Drawing.Size(129, 33);
-            this.regBtn.TabIndex = 3;
+            this.regBtn.TabIndex = 14;
             this.regBtn.Text = "REGISTER";
-            this.regBtn.UseVisualStyleBackColor = false;
+            this.regBtn.UseVisualStyleBackColor = true;
             this.regBtn.EnabledChanged += new System.EventHandler(this.regBtn_EnabledChanged);
             this.regBtn.Click += new System.EventHandler(this.regBtn_Click);
             // 
@@ -217,7 +215,7 @@
             this.contactNumberInput.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.contactNumberInput.Name = "contactNumberInput";
             this.contactNumberInput.Size = new System.Drawing.Size(313, 30);
-            this.contactNumberInput.TabIndex = 15;
+            this.contactNumberInput.TabIndex = 13;
             // 
             // label13
             // 
@@ -236,7 +234,7 @@
             this.nicInput.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.nicInput.Name = "nicInput";
             this.nicInput.Size = new System.Drawing.Size(313, 30);
-            this.nicInput.TabIndex = 13;
+            this.nicInput.TabIndex = 12;
             // 
             // label11
             // 
@@ -298,7 +296,7 @@
             this.femaleRadio.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.femaleRadio.Name = "femaleRadio";
             this.femaleRadio.Size = new System.Drawing.Size(98, 29);
-            this.femaleRadio.TabIndex = 14;
+            this.femaleRadio.TabIndex = 6;
             this.femaleRadio.TabStop = true;
             this.femaleRadio.Text = "Female";
             this.femaleRadio.UseVisualStyleBackColor = true;
@@ -311,7 +309,7 @@
             this.maleRadio.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.maleRadio.Name = "maleRadio";
             this.maleRadio.Size = new System.Drawing.Size(76, 29);
-            this.maleRadio.TabIndex = 13;
+            this.maleRadio.TabIndex = 5;
             this.maleRadio.TabStop = true;
             this.maleRadio.Text = "Male";
             this.maleRadio.UseVisualStyleBackColor = true;
@@ -333,7 +331,7 @@
             this.dobInput.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.dobInput.Name = "dobInput";
             this.dobInput.Size = new System.Drawing.Size(305, 30);
-            this.dobInput.TabIndex = 11;
+            this.dobInput.TabIndex = 4;
             // 
             // label5
             // 
@@ -352,7 +350,7 @@
             this.lastNameInput.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.lastNameInput.Name = "lastNameInput";
             this.lastNameInput.Size = new System.Drawing.Size(305, 30);
-            this.lastNameInput.TabIndex = 9;
+            this.lastNameInput.TabIndex = 3;
             // 
             // label4
             // 
@@ -371,7 +369,7 @@
             this.firstNameInput.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.firstNameInput.Name = "firstNameInput";
             this.firstNameInput.Size = new System.Drawing.Size(305, 30);
-            this.firstNameInput.TabIndex = 7;
+            this.firstNameInput.TabIndex = 2;
             // 
             // label3
             // 
@@ -391,7 +389,7 @@
             this.regNoInput.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.regNoInput.Name = "regNoInput";
             this.regNoInput.Size = new System.Drawing.Size(151, 33);
-            this.regNoInput.TabIndex = 5;
+            this.regNoInput.TabIndex = 1;
             this.regNoInput.SelectedIndexChanged += new System.EventHandler(this.regNoInput_SelectedIndexChanged);
             // 
             // label2
@@ -432,7 +430,7 @@
             this.homePhoneInput.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.homePhoneInput.Name = "homePhoneInput";
             this.homePhoneInput.Size = new System.Drawing.Size(123, 30);
-            this.homePhoneInput.TabIndex = 17;
+            this.homePhoneInput.TabIndex = 10;
             // 
             // label10
             // 
@@ -451,7 +449,7 @@
             this.mobilePhoneInput.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.mobilePhoneInput.Name = "mobilePhoneInput";
             this.mobilePhoneInput.Size = new System.Drawing.Size(107, 30);
-            this.mobilePhoneInput.TabIndex = 15;
+            this.mobilePhoneInput.TabIndex = 9;
             // 
             // label9
             // 
@@ -470,7 +468,7 @@
             this.emailInput.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.emailInput.Name = "emailInput";
             this.emailInput.Size = new System.Drawing.Size(308, 30);
-            this.emailInput.TabIndex = 13;
+            this.emailInput.TabIndex = 8;
             // 
             // label7
             // 
@@ -490,7 +488,7 @@
             this.addressInput.Multiline = true;
             this.addressInput.Name = "addressInput";
             this.addressInput.Size = new System.Drawing.Size(308, 30);
-            this.addressInput.TabIndex = 11;
+            this.addressInput.TabIndex = 7;
             // 
             // label8
             // 
@@ -513,7 +511,7 @@
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(68, 29);
-            this.linkLabel1.TabIndex = 3;
+            this.linkLabel1.TabIndex = 18;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "EXIT";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);

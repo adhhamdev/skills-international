@@ -15,6 +15,9 @@ namespace Skiils_International
 
         private void Registration_Load(object sender, EventArgs e)
         {
+            regBtn.Enabled = true;
+            updateBtn.Enabled = true;
+            delBtn.Enabled = false;
             try
             {
                 conn.Open();
@@ -26,7 +29,7 @@ namespace Skiils_International
                 {
                     regNoInput.Items.Add(row[0].ToString());
                 }
-                regNoInput.SelectedItem = "New Register";
+                regNoInput.SelectedIndex = 0;
                 conn.Close();
             }
             catch (Exception ex)
@@ -73,7 +76,6 @@ namespace Skiils_International
                 {
                     regNoInput.Items.Add(row[0].ToString());
                 }
-                regNoInput.SelectedItem = regNo.ToString();
                 conn.Close();
                 MessageBox.Show("Record Added Successfully!", "Registered Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -162,7 +164,6 @@ namespace Skiils_International
                     {
                         regNoInput.Items.Add(row[0].ToString());
                     }
-                    regNoInput.SelectedItem = "New Register";
                     clearBtn.PerformClick();
                     conn.Close();
                 }
@@ -190,6 +191,47 @@ namespace Skiils_International
             parentNameInput.Text = "";
             nicInput.Text = "";
             contactNumberInput.Text = "";
+        }
+
+        private void regBtn_EnabledChanged(object sender, EventArgs e)
+        {
+            if (regBtn.Enabled)
+            {
+                regBtn.ForeColor = System.Drawing.Color.White;
+                regBtn.BackColor = System.Drawing.Color.RoyalBlue;
+            }
+            else
+            {
+                regBtn.ForeColor = System.Drawing.Color.Gray;
+                regBtn.BackColor = System.Drawing.Color.DarkGray;
+            }
+        }
+
+        private void updateBtn_EnabledChanged(object sender, EventArgs e)
+        {
+            if (updateBtn.Enabled)
+            {
+                updateBtn.ForeColor = System.Drawing.Color.RoyalBlue;
+                updateBtn.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            }
+            else
+            {
+                updateBtn.ForeColor = System.Drawing.Color.Gray;
+                updateBtn.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            }
+        }
+
+        private void delBtn_EnabledChanged(object sender, EventArgs e)
+        {
+            if (delBtn.Enabled)
+            {
+                delBtn.ForeColor = System.Drawing.Color.White;
+                delBtn.BackColor = System.Drawing.Color.Crimson;
+            } else
+            {
+                delBtn.ForeColor = System.Drawing.Color.Gray;
+                delBtn.BackColor = System.Drawing.Color.DarkGray;
+            }
         }
 
         private void regNoInput_SelectedIndexChanged(object sender, EventArgs e)
@@ -245,48 +287,6 @@ namespace Skiils_International
             catch (Exception ex)
             {
                 conn.Close();
-            }
-        }
-
-        private void regBtn_EnabledChanged(object sender, EventArgs e)
-        {
-            if (regBtn.Enabled)
-            {
-                regBtn.ForeColor = System.Drawing.Color.White;
-                regBtn.BackColor = System.Drawing.Color.RoyalBlue;
-            }
-            else
-            {
-                regBtn.ForeColor = System.Drawing.Color.Gray;
-                regBtn.BackColor = System.Drawing.Color.DarkGray;
-            }
-        }
-
-        private void updateBtn_EnabledChanged(object sender, EventArgs e)
-        {
-            if (updateBtn.Enabled)
-            {
-                updateBtn.ForeColor = System.Drawing.Color.RoyalBlue;
-                updateBtn.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
-            }
-            else
-            {
-                updateBtn.ForeColor = System.Drawing.Color.Gray;
-                updateBtn.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            }
-        }
-
-        private void delBtn_EnabledChanged(object sender, EventArgs e)
-        {
-            if (!delBtn.Enabled)
-            {
-                delBtn.ForeColor = System.Drawing.Color.White;
-                delBtn.BackColor = System.Drawing.Color.Crimson;
-            }
-            else
-            {
-                delBtn.ForeColor = System.Drawing.Color.White;
-                delBtn.BackColor = System.Drawing.Color.DarkGray;
             }
         }
     }
