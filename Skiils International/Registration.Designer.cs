@@ -535,7 +535,7 @@
             this.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.Name = "Registration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registration - Skills International";
+            this.Text = "Student Registration - Skills International";
             this.Load += new System.EventHandler(this.Registration_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

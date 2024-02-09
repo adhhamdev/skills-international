@@ -77,7 +77,7 @@ namespace Skiils_International
                     regNoInput.Items.Add(row[0].ToString());
                 }
                 conn.Close();
-                MessageBox.Show("Record Added Successfully!", "Registered Employee", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Record Added Successfully!", "Registered Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -227,7 +227,8 @@ namespace Skiils_International
             {
                 delBtn.ForeColor = System.Drawing.Color.White;
                 delBtn.BackColor = System.Drawing.Color.Crimson;
-            } else
+            }
+            else
             {
                 delBtn.ForeColor = System.Drawing.Color.Gray;
                 delBtn.BackColor = System.Drawing.Color.DarkGray;
