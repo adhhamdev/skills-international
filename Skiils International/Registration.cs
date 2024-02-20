@@ -16,7 +16,7 @@ namespace Skiils_International
         private void Registration_Load(object sender, EventArgs e)
         {
             regBtn.Enabled = true;
-            updateBtn.Enabled = true;
+            updateBtn.Enabled = false;
             delBtn.Enabled = false;
             try
             {

@@ -74,14 +74,5 @@ namespace Skiils_International
         {
             loginUsername.Focus();
         }
-
-        private void exitBtn_Click_1(object sender, EventArgs e)
-        {
-            var result = MessageBox.Show("Are you sure, do you really want to exit...?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (result == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
     }
 }
